@@ -1,9 +1,0 @@
-name: meins_qol
-version: '${project.version}'
-main: de.ender.qol.Main
-api-version: 1.19
-load: STARTUP
-depend: [ meins_core ]
-authors: [ ender__exe ]
-description: QOL features for mc
-website: https://github.com/github-dotEXE
