@@ -7,6 +7,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.List;
+
 public final class Main extends JavaPlugin {
 
     public static final String CONFIG = "QOL_Config";
@@ -18,6 +20,10 @@ public final class Main extends JavaPlugin {
 
         plugin = this;
         new CConfig(CONFIG, plugin);
+
+        getCommand("qolconfig").setExecutor(new QOLConfigCMD());
+        getCommand("qolconfig").setTabCompleter(new QOLConfigCMD());
+        getCommand("qolconfig").setPermission("qol.config");
 
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new SignQOL(), this);
