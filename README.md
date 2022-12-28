@@ -21,7 +21,19 @@ Features:
     resets cooldown for villagers trades once rightclicked
     (off by default)
     
-  
+Commands and Permissions:
+  exampleCMD:
+    /CMD [args here] : permission
+      description for cmd here
+   
+  qolconfig: : qol.config
+    /qolconfig [string path] 
+      displays what the value of [string path] is
+    /qolconfig [string path] true
+      sets [string path] to true
+    /qolconfig [string path] false
+      sets [string path] to false
+    
   
 ALL FEATURES CONFIGABLE IN CONFIG
 </pre>
