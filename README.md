@@ -17,6 +17,10 @@ Features:
   Anti Trample:
     stops players from trampleing crops and farmland
     
+  Villager Cooldown Reset:
+    resets cooldown for villagers trades once rightclicked
+    (off by default)
+    
   
   
 ALL FEATURES CONFIGABLE IN CONFIG
