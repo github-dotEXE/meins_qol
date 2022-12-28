@@ -13,4 +13,11 @@ Features:
     auto replant
     get all loot (works with fortune)
     only at full age
+    
+  Anti Trample:
+    stops players from trampleing crops and farmland
+    
+  
+  
+ALL FEATURES CONFIGABLE IN CONFIG
 </pre>
