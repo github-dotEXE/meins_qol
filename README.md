@@ -4,7 +4,7 @@ QOL Plugin for minecraft
 Dependencies:
   meins_core: https://github.com/github-dotEXE/meins_core
   
-Features:
+QOL features:
   Sign Edit:
     edit sign after you placed them by rightclicking them
   
@@ -20,6 +20,9 @@ Features:
   Villager Cooldown Reset:
     resets cooldown for villagers trades once rightclicked
     (off by default)
+  
+  Reload confirm alias:
+    alias for /reload confirm
     
 Commands and Permissions:
   exampleCMD:
@@ -33,7 +36,11 @@ Commands and Permissions:
       sets [string path] to true
     /qolconfig [string path] false
       sets [string path] to false
+      
+  reloadconfirm:
+    /reloadconfirm
+      performs /reload confirm as command executor
     
   
-ALL FEATURES CONFIGABLE IN CONFIG
+ALL FEATURES CONFIGABLE IN CONFIG OR THRU /QOLCONFIG COMMAND
 </pre>
