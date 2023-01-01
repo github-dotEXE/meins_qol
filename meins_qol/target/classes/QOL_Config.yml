@@ -15,3 +15,7 @@ easy_harvest: true
 #fast villager cooldown QOL
 #villager resets uses(cooldown for trade) if right-clicked
 villager_cooldown: false
+
+#alias for /reload confirm
+#performs /reload confirm as command executor (uses standard permissions)
+reload_confirm_alias: true

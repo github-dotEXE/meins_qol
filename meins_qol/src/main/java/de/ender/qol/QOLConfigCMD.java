@@ -22,18 +22,14 @@ public class QOLConfigCMD implements CommandExecutor, TabCompleter {
         Main plugin = Main.getPlugin();
         CConfig cconfig = new CConfig(Main.CONFIG, plugin);
         FileConfiguration config = cconfig.getCustomConfig();
-        Object args0 = config.get(args[0]);
-        if (args0 != null) {
-            if(args.length == 1) {
-                sender.sendMessage(ChatColor.GREEN + args[0] + "=" + args0);
-                return false;
-            }
-            config.set(args[0], Boolean.parseBoolean(args[1]));
-            cconfig.save();
-            sender.sendMessage(ChatColor.GREEN + args[0] + " is now " + args[1]);
+        Object args0 = config.getBoolean(args[0]);
+        if(args.length == 1) {
+            sender.sendMessage(ChatColor.GREEN + args[0] + "=" + args0);
             return false;
         }
-        sender.sendMessage(ChatColor.RED + "Non-Valid Path!");
+        config.set(args[0], Boolean.parseBoolean(args[1]));
+        cconfig.save();
+        sender.sendMessage(ChatColor.GREEN + args[0] + " is now " + args[1]);
         return false;
     }
 
@@ -47,6 +43,7 @@ public class QOLConfigCMD implements CommandExecutor, TabCompleter {
             completions.add("easy_harvest");
             completions.add("sign_editing");
             completions.add("villager_cooldown");
+            completions.add("reload_confirm_alias");
         } else if (args.length == 2) {
             commands.add("true");
             commands.add("false");

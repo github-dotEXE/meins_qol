@@ -19,23 +19,26 @@ public class HarvestablesQOL implements Listener {
         CConfig cconfig = new CConfig(Main.CONFIG, plugin);
         FileConfiguration config = cconfig.getCustomConfig();
 
-        if ((boolean) config.get("easy_harvest")) {
+        if (config.getBoolean("easy_harvest")) {
             Action action = event.getAction();
             Player player = event.getPlayer();
             Block block = event.getClickedBlock();
-            BlockData blockdata = block.getBlockData();
-            ;
+            BlockData blockdata = null;
+            if (block != null) {
+                blockdata = block.getBlockData();
 
-            if (action == Action.RIGHT_CLICK_BLOCK && blockdata instanceof Ageable) {
-                Ageable ageable = (Ageable) blockdata;
-                if (ageable.getAge() == ageable.getMaximumAge()) {
-                    ItemStack[] drops = block.getDrops(player.getItemInHand()).toArray(new ItemStack[0]);
-                    player.getInventory().addItem(drops);
-                    ageable.setAge(0);
-                    block.setBlockData(ageable);
-                    player.playSound(block.getLocation(), blockdata.getSoundGroup().getBreakSound(), 1f, 1f);
+                if (action == Action.RIGHT_CLICK_BLOCK && blockdata instanceof Ageable) {
+                    Ageable ageable = (Ageable) blockdata;
+                    if (ageable.getAge() == ageable.getMaximumAge()) {
+                        ItemStack[] drops = block.getDrops(player.getItemInHand()).toArray(new ItemStack[0]);
+                        player.getInventory().addItem(drops);
+                        ageable.setAge(0);
+                        block.setBlockData(ageable);
+                        player.playSound(block.getLocation(), blockdata.getSoundGroup().getBreakSound(), 1f, 1f);
+                    }
                 }
             }
         }
     }
+
 }

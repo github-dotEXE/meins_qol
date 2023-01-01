@@ -22,7 +22,7 @@ public class VillagerCooldwonQOL implements Listener {
         CConfig cconfig = new CConfig(Main.CONFIG, plugin);
         FileConfiguration config = cconfig.getCustomConfig();
 
-        if ((boolean) config.get("villager_cooldown")) {
+        if (config.getBoolean("villager_cooldown")) {
             Player player = event.getPlayer();
             Entity entity = event.getRightClicked();
             if(entity instanceof Villager) {

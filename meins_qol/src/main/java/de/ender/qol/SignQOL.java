@@ -19,16 +19,18 @@ public class SignQOL implements Listener {
         CConfig cconfig = new CConfig(Main.CONFIG, plugin);
         FileConfiguration config = cconfig.getCustomConfig();
 
-        if ((boolean) config.get("sign_editing")) {
+        if (config.getBoolean("sign_editing")) {
             Action action = event.getAction();
             Player player = event.getPlayer();
             Block block = event.getClickedBlock();
-            BlockState blockstate = block.getState();
+            if (block != null) {
+                BlockState blockstate = block.getState();
 
-            if (action == Action.RIGHT_CLICK_BLOCK && blockstate instanceof Sign) {
-                Sign sign = (Sign) blockstate;
-                player.openSign(sign);
-                //rest happens in sign listener
+                if (action == Action.RIGHT_CLICK_BLOCK && blockstate instanceof Sign) {
+                    Sign sign = (Sign) blockstate;
+                    player.openSign(sign);
+                    //rest happens in sign listener
+                }
             }
         }
     }
