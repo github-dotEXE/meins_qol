@@ -34,27 +34,29 @@ public class QOLConfigCMD implements CommandExecutor, TabCompleter {
 
 
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-        List<String> completions = new ArrayList<>();
         List<String> commands = new ArrayList<>();
+        List<String> completes = new ArrayList<>();
 
         if(args.length == 1) {
-            completions.add("trample_protection");
-            completions.add("easy_harvest");
-            completions.add("sign_editing");
-            completions.add("villager_cooldown");
-            completions.add("reload_confirm_alias");
-            completions.add("max_anvil_remover");
-            completions.add("mendify");
-            completions.add("middle_to_delete");
-            completions.add("stop_sleeping");
+            commands.add("trample_protection");
+            commands.add("easy_harvest");
+            commands.add("sign_editing");
+            commands.add("villager_cooldown");
+            commands.add("reload_confirm_alias");
+            commands.add("max_anvil_remover");
+            commands.add("mendify");
+            commands.add("middle_to_delete");
+            commands.add("stop_sleeping");
+            commands.add("villager_mover");
+            commands.add("villager_burner");
         } else if (args.length == 2) {
-            commands.add("true");
-            commands.add("false");
+            completes.add("true");
+            completes.add("false");
         }
 
-        StringUtil.copyPartialMatches(args[args.length-1], commands, completions); //copy matches of first argument
-        Collections.sort(completions);//sort the list
-        return completions;
+        StringUtil.copyPartialMatches(args[args.length-1], commands,completes); //copy matches of first argument
+        Collections.sort(commands);//sort the list
+        return commands;
 
     }
 }

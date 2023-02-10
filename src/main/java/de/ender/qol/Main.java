@@ -34,6 +34,8 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new AnvilQOL(), this);
         pluginManager.registerEvents(new InventoryQOL(), this);
         pluginManager.registerEvents(new SleepQOL(), this);
+        pluginManager.registerEvents(new VillagerMoverQOL(), this);
+        pluginManager.registerEvents(new VillagerBurnerQOL(), this);
 
         new UpdateChecker().check("1.5", "github-dotEXE", "meins_qol");
     }

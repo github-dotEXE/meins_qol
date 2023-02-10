@@ -40,6 +40,6 @@ stop_sleeping: false
 #makes it possible to let villagers pathfind to a player if they are shift rightclicked
 villager_mover: true
 
-#villager mover
-#makes it possible to let villagers pathfind to a player if they are shift rightclicked
-villager_mover: true
+#villager burner
+#sets villagers on fire if rightclicked with a flint and steel
+villager_burner: true
