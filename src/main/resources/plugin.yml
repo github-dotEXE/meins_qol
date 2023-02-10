@@ -1,0 +1,14 @@
+name: meins_qol
+version: 1.5
+main: de.ender.qol.Main
+api-version: 1.19
+depend: [ meins_core ]
+authors: [ ender__exe ]
+description: QOL features for mc
+website: https://github.com/github-dotEXE
+
+commands:
+  qolconfig:
+    description: /qolconfig [StringPath] -|true|false
+  reloadconfirm:
+    description: alias for /reloadconfirm

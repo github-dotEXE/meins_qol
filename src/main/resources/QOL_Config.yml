@@ -1,0 +1,45 @@
+#QOL CONFIG#
+
+#sign editing QOL
+#makes Editing signs possible
+sign_editing: true
+
+#trample protection QOL
+#protects farmland from getting trampled
+trample_protection: true
+
+#easy harvest QOL
+#harvest field plants by right-clicking
+easy_harvest: true
+
+#fast villager cooldown QOL
+#villager resets uses(cooldown for trade) if right-clicked
+villager_cooldown: false
+
+#alias for /reload confirm
+#performs /reload confirm as command executor (uses standard permissions)
+reload_confirm_alias: true
+
+#anvil max lvl cost remover
+#removes max level cost on anvil
+max_anvil_remover: true
+
+#mendify/mendfinity
+#makes it possible to have mending and infinity on bow
+mendify: true
+
+#middle click to delete
+#deletes item when you middleclick it and it isnt out of diamond iron or netherite or a bow
+middle_to_delete: true
+
+#stop sleeping
+#stops all players from sleeping
+stop_sleeping: false
+
+#villager mover
+#makes it possible to let villagers pathfind to a player if they are shift rightclicked
+villager_mover: true
+
+#villager mover
+#makes it possible to let villagers pathfind to a player if they are shift rightclicked
+villager_mover: true
