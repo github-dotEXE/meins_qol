@@ -2,7 +2,6 @@ package de.ender.qol;
 
 import com.google.common.collect.Lists;
 import de.ender.core.CConfig;
-import de.ender.core.MCore;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
