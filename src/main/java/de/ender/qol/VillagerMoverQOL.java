@@ -14,6 +14,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Random;
 import java.util.UUID;
 
 public class VillagerMoverQOL implements @NotNull Listener  {
@@ -46,8 +47,10 @@ public class VillagerMoverQOL implements @NotNull Listener  {
 
                         @Override
                         public void run() {
-                            if (player.getWorld() == villager.getWorld() || player.getLocation().distance(villager.getLocation()) >= 1) {
-                                success = pathfinder.moveTo(player, 0.6);
+                            if (player.getWorld() == villager.getWorld() || player.getLocation().distance(villager.getLocation()) >= 1.5) {
+                                success = pathfinder.moveTo(player, new Random().nextDouble()/3+0.4);
+                            } else {
+                                pathfinder.stopPathfinding();
                             }
                             if (!FSuccess) {
                                 player.sendMessage(ChatColor.GREEN + "<VillagerFollow> Villager now following!");
@@ -56,7 +59,7 @@ public class VillagerMoverQOL implements @NotNull Listener  {
                                 finalCconfig.save();
                             }
                         }
-                    }.runTaskTimer(plugin, 0L, 20L);
+                    }.runTaskTimer(plugin, 0L, 5L);
 
                 } else {
                     player.sendMessage(ChatColor.GOLD + "<VillagerFollow> Villager no longer following!");

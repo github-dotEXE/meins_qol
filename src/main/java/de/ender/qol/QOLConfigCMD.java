@@ -49,9 +49,11 @@ public class QOLConfigCMD implements CommandExecutor, TabCompleter {
             commands.add("stop_sleeping");
             commands.add("villager_mover");
             commands.add("villager_burner");
+            commands.add("boost_netherite");
+            commands.add("dynamic_render_distance");
         } else if (args.length == 2) {
-            completes.add("true");
-            completes.add("false");
+            commands.add("true");
+            commands.add("false");
         }
 
         StringUtil.copyPartialMatches(args[args.length-1], commands,completes); //copy matches of first argument

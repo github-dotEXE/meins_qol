@@ -43,3 +43,11 @@ villager_mover: true
 #villager burner
 #sets villagers on fire if rightclicked with a flint and steel
 villager_burner: true
+
+#boosted netherite
+#gives fire resistance when full netherite armor set is on player
+boost_netherite: true
+
+#dynamic render distance
+#changes the render distance for players individually depending on multiple factors including being afk
+dynamic_render_distance: true

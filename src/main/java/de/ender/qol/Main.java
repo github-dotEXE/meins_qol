@@ -1,6 +1,7 @@
 package de.ender.qol;
 
 import de.ender.core.CConfig;
+import de.ender.core.Log;
 import de.ender.core.MCore;
 import de.ender.core.UpdateChecker;
 import org.bukkit.Bukkit;
@@ -36,13 +37,15 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new SleepQOL(), this);
         pluginManager.registerEvents(new VillagerMoverQOL(), this);
         pluginManager.registerEvents(new VillagerBurnerQOL(), this);
+        pluginManager.registerEvents(new NetheriteBoosterQOL(), this);
+        pluginManager.registerEvents(new DynamicRenderDistanceQOL(), this);
 
-        new UpdateChecker().check("1.5", "github-dotEXE", "meins_qol");
+        UpdateChecker.check("1.5", "github-dotEXE", "meins_qol");
     }
 
     @Override
     public void onDisable() {
-        new MCore().log(ChatColor.GREEN + "Disabling Meins QOL...");
+        Log.log(ChatColor.GREEN + "Disabling Meins QOL...");
     }
 
     public static Main getPlugin() {
