@@ -14,7 +14,6 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -57,7 +56,7 @@ public class NetheriteBoosterQOL implements Listener {
         CConfig cconfig = new CConfig(Main.CONFIG, plugin);
         FileConfiguration config = cconfig.getCustomConfig();
 
-        if (config.getBoolean("boost_netherite")) {
+        if (config.getBoolean("boost_netherite_tools")) {
             Action action  = event.getAction();
             Block block = event.getClickedBlock();
             Player player= event.getPlayer();

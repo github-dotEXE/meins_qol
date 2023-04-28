@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class QOLConfigCMD implements CommandExecutor, TabCompleter {
 
@@ -21,9 +22,15 @@ public class QOLConfigCMD implements CommandExecutor, TabCompleter {
         Main plugin = Main.getPlugin();
         CConfig cconfig = new CConfig(Main.CONFIG, plugin);
         FileConfiguration config = cconfig.getCustomConfig();
-        Object args0 = config.getBoolean(args[0]);
+        if(args.length == 0) {
+            for(Map.Entry<String, Object> entry : config.getValues(false).entrySet()){
+                sender.sendMessage(ChatColor.GREEN + entry.getKey() + " = " + entry.getValue());
+            }
+            return false;
+        }
+        boolean value0 = config.getBoolean(args[0]);
         if(args.length == 1) {
-            sender.sendMessage(ChatColor.GREEN + args[0] + "=" + args0);
+            sender.sendMessage(ChatColor.GREEN + args[0] + " = " + value0);
             return false;
         }
         config.set(args[0], Boolean.parseBoolean(args[1]));
@@ -33,32 +40,21 @@ public class QOLConfigCMD implements CommandExecutor, TabCompleter {
     }
 
 
-    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, String[] args) {
         List<String> commands = new ArrayList<>();
         List<String> completes = new ArrayList<>();
 
         if(args.length == 1) {
-            commands.add("trample_protection");
-            commands.add("easy_harvest");
-            commands.add("sign_editing");
-            commands.add("villager_cooldown");
-            commands.add("reload_confirm_alias");
-            commands.add("max_anvil_remover");
-            commands.add("mendify");
-            commands.add("middle_to_delete");
-            commands.add("stop_sleeping");
-            commands.add("villager_mover");
-            commands.add("villager_burner");
-            commands.add("boost_netherite");
-            commands.add("dynamic_render_distance");
+            Main plugin = Main.getPlugin();
+            CConfig cconfig = new CConfig(Main.CONFIG, plugin);
+            FileConfiguration config = cconfig.getCustomConfig();
+            commands.addAll(config.getKeys(false));
         } else if (args.length == 2) {
             commands.add("true");
             commands.add("false");
         }
-
         StringUtil.copyPartialMatches(args[args.length-1], commands,completes); //copy matches of first argument
         Collections.sort(commands);//sort the list
         return commands;
-
     }
 }

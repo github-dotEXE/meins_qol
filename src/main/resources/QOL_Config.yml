@@ -28,9 +28,9 @@ max_anvil_remover: true
 #makes it possible to have mending and infinity on bow
 mendify: true
 
-#middle click to delete
-#deletes item when you middleclick it and it isnt out of diamond iron or netherite or a bow
-middle_to_delete: true
+#shift rightclick to delete
+#deletes item when you shift rightclick it and it isnt out of diamond iron or netherite or a bow
+delete: true
 
 #stop sleeping
 #stops all players from sleeping
@@ -48,6 +48,14 @@ villager_burner: true
 #gives fire resistance when full netherite armor set is on player
 boost_netherite: true
 
-#dynamic render distance
-#changes the render distance for players individually depending on multiple factors including being afk
-dynamic_render_distance: true
+#boosted netherite tools
+#makes glass and deepslate instamine with haste 2
+boost_netherite_tools: false
+
+#time saver
+#makes daytime stop when all players leave
+time_saver: false
+
+#bed saver
+#saves the two last still existing bed locations (so if you travel and skip the night you still have a respawn point
+bed_saver: false

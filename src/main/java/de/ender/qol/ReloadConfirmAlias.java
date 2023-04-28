@@ -8,9 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-public class ReloadConfirmAlias implements @Nullable CommandExecutor {
+public class ReloadConfirmAlias implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -23,6 +22,7 @@ public class ReloadConfirmAlias implements @Nullable CommandExecutor {
                 Player player = (Player) sender;
                 player.performCommand("reload confirm");
             } else sender.sendMessage(ChatColor.RED + "Command is for players!");
+
         }
         return false;
     }

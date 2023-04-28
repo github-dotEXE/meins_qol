@@ -2,6 +2,7 @@ name: meins_qol
 version: 1.5
 main: de.ender.qol.Main
 api-version: 1.19
+load: POSTWORLD
 depend: [ meins_core ]
 authors: [ ender__exe ]
 description: QOL features for mc
@@ -12,3 +13,5 @@ commands:
     description: /qolconfig [StringPath] -|true|false
   reloadconfirm:
     description: alias for /reloadconfirm
+  delete:
+    description: /delete undo|del|add|list material|name|keyword ...item_name|keyword_in_item_type|material... // You can also use & for colors
