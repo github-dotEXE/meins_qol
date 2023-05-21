@@ -59,3 +59,27 @@ time_saver: false
 #bed saver
 #saves the two last still existing bed locations (so if you travel and skip the night you still have a respawn point
 bed_saver: false
+
+#death coordinates
+#shows death coordinates on death
+death_coords: true
+
+#exp_saver
+#lets you keep your exp on death
+keep_exp_on_death: false
+
+#100% creeper
+#all blocks will be dropped on creeper explosion
+100%_creeper: true
+
+#creeper no damage
+#creepers wont destroy blocks
+creeper_no_damage: false
+
+#no sleep problems
+#makes sleep possible even with mobs or when you are to far away
+no_sleep_problems: true
+
+#afk render distance
+#makes afk players have lower render distance
+afk_render_distance: true

@@ -1,6 +1,7 @@
 package de.ender.qol;
 
 import de.ender.core.CConfig;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.block.data.BlockData;
@@ -23,14 +24,19 @@ public class HarvestablesQOL implements Listener {
             Action action = event.getAction();
             Player player = event.getPlayer();
             Block block = event.getClickedBlock();
-            BlockData blockdata = null;
+            BlockData blockdata;
             if (block != null) {
                 blockdata = block.getBlockData();
+                Material blocktype = block.getType();
+                ItemStack item = player.getInventory().getItemInMainHand();
+                Material itemtype = item.getType();
 
-                if (action == Action.RIGHT_CLICK_BLOCK && blockdata instanceof Ageable) {
+                if (action == Action.RIGHT_CLICK_BLOCK && blockdata instanceof Ageable &&
+                        (itemtype == Material.AIR || itemtype == Material.BONE_MEAL || itemtype.name().toLowerCase().contains("hoe")) &&
+                        !(blocktype.name().toLowerCase().contains("stem")|| blocktype == Material.BAMBOO|| blocktype == Material.SWEET_BERRY_BUSH)) {
                     Ageable ageable = (Ageable) blockdata;
                     if (ageable.getAge() == ageable.getMaximumAge()) {
-                        ItemStack[] drops = block.getDrops(player.getItemInHand()).toArray(new ItemStack[0]);
+                        ItemStack[] drops = block.getDrops(player.getInventory().getItemInMainHand()).toArray(new ItemStack[0]);
                         player.getInventory().addItem(drops);
                         ageable.setAge(0);
                         block.setBlockData(ageable);
@@ -40,5 +46,4 @@ public class HarvestablesQOL implements Listener {
             }
         }
     }
-
 }

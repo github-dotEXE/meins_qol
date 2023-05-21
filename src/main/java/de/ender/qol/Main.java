@@ -26,10 +26,9 @@ public final class Main extends JavaPlugin {
         getCommand("qolconfig").setTabCompleter(new QOLConfigCMD());
         getCommand("qolconfig").setPermission("qol.config");
         getCommand("reloadconfirm").setExecutor(new ReloadConfirmAlias());
-
         getCommand("delete").setExecutor(new DeleteCMD());
 
-        PluginManager pluginManager = Bukkit.getPluginManager();
+        PluginManager pluginManager = Bukkit.getServer().getPluginManager();
         pluginManager.registerEvents(new SignQOL(), this);
         pluginManager.registerEvents(new HarvestablesQOL(), this);
         pluginManager.registerEvents(new TrampleQOL(), this);
@@ -42,8 +41,11 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new NetheriteBoosterQOL(), this);
         pluginManager.registerEvents(new TimeSaverQOL(), this);
         pluginManager.registerEvents(new BedSaverQOL(), this);
+        pluginManager.registerEvents(new DeathQOL(), this);
+        pluginManager.registerEvents(new CreeperQOL(), this);
+        pluginManager.registerEvents(new DynamicRenderDistanceQOL(), this);
 
-        UpdateChecker.check("1.5", "github-dotEXE", "meins_qol","master");
+        UpdateChecker.check(this.getDescription().getVersion(), "github-dotEXE", "meins_qol","master");
 
         if (config.getBoolean("time_saver") && !Bukkit.getOnlinePlayers().isEmpty()) Bukkit.getWorlds().get(0).setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
     }
