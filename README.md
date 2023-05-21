@@ -1,8 +1,11 @@
 # meins_qol
 #### QOL Plugin for minecraft
 
-## QOLs:
 
+## Dependencies
+Meins Core: https://github.com/github-dotEXE/meins_core/
+
+## QOLs:
 <pre>
 
 #sign editing QOL
