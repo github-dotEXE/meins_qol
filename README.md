@@ -3,7 +3,7 @@
 
 ## QOLs:
 
-<p>
+<pre>
 
 #sign editing QOL
 #makes Editing signs possible
@@ -88,4 +88,4 @@ no_sleep_problems: true
 #afk render distance
 #makes afk players have lower render distance
 afk_render_distance: true
-</p>
+</pre>
