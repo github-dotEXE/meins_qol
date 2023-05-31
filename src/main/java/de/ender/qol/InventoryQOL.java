@@ -26,7 +26,7 @@ public class InventoryQOL implements Listener {
             ClickType click = event.getClick();
             ItemStack item  = event.getCurrentItem();
             UUID uuid = player.getUniqueId();
-            if(click == ClickType.SHIFT_RIGHT && item != null) {
+            if(click == ClickType.SHIFT_RIGHT && item != null && item.getItemMeta() != null) {
                 CConfig deleteItemsCConfig = new CConfig("deleteItems", plugin);
                 FileConfiguration deleteItemsConfig = deleteItemsCConfig.getCustomConfig();
 
