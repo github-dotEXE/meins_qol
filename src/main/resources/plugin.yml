@@ -1,5 +1,5 @@
 name: meins_qol
-version: 1.5
+version: '${project.version}'
 main: de.ender.qol.Main
 api-version: 1.19
 load: POSTWORLD

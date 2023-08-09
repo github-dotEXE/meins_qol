@@ -1,6 +1,7 @@
 package de.ender.qol;
 
 import de.ender.core.CConfig;
+import de.ender.core.Colorer;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
@@ -39,7 +40,7 @@ public class SignQOL implements Listener {
     public void onSignChange(SignChangeEvent event) {
         Sign sign = (Sign) event.getBlock().getState();
         for(int i = 0; i <= sign.getLines().length-1; i++){
-            sign.setLine(i,sign.getLine(i));
+            sign.setLine(i, sign.getLine(i));
         }
         sign.update();
     }

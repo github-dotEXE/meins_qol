@@ -83,3 +83,7 @@ no_sleep_problems: true
 #afk render distance
 #makes afk players have lower render distance
 afk_render_distance: true
+
+#minimessage
+#allows mini message formatation in chat and on signs with correct permissions
+minimessage: true

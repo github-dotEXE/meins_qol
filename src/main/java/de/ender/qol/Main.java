@@ -4,7 +4,6 @@ import de.ender.core.CConfig;
 import de.ender.core.Log;
 import de.ender.core.UpdateChecker;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.GameRule;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
@@ -17,7 +16,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Log.log(ChatColor.GREEN + "Enabling Meins QOL...");
+        Log.enable(this);
 
         plugin = this;
         FileConfiguration config = new CConfig(CONFIG, plugin).getCustomConfig();
@@ -44,15 +43,16 @@ public final class Main extends JavaPlugin {
         pluginManager.registerEvents(new DeathQOL(), this);
         pluginManager.registerEvents(new CreeperQOL(), this);
         pluginManager.registerEvents(new DynamicRenderDistanceQOL(), this);
+        pluginManager.registerEvents(new MiniMessageQOL(), this);
 
-        UpdateChecker.check(this.getDescription().getVersion(), "github-dotEXE", "meins_qol","master");
+        new UpdateChecker(this,"master").check().downloadLatestMeins();
 
         if (config.getBoolean("time_saver") && !Bukkit.getOnlinePlayers().isEmpty()) Bukkit.getWorlds().get(0).setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
     }
 
     @Override
     public void onDisable() {
-        Log.log(ChatColor.GREEN + "Disabling Meins QOL...");
+        Log.disable(this);
 
         FileConfiguration config = new CConfig(CONFIG, plugin).getCustomConfig();
 

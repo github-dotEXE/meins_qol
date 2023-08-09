@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 public class DeathQOL implements Listener {
+
     @EventHandler
     public static void deathCoords(PlayerDeathEvent e) {
         Main plugin = Main.getPlugin();
